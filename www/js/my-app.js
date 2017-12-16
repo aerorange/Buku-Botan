@@ -1,6 +1,12 @@
 // Initialize app
-var myApp = new Framework7();
+var myApp = new Framework7({
+    material : true
+})
 
+
+
+// coba buat variabel loginsession
+var loginsession = null;
 
 // If we need to use custom DOM library, let's save it to $$ variable:
 var $$ = Dom7;
@@ -33,7 +39,49 @@ $$(document).on('pageInit', function (e) {
     if (page.name === 'about') {
         // Following code will be executed for page with data-page attribute equal to "about"
         myApp.alert('Here comes About page');
+    } else if (page.name === 'register') {
+        $$('#test-button').on('click', function() {
+            myApp.alert("test berhasil");
+        });
+        $$('#register-button').on('click', function() {
+            $$.ajax({
+                url: "http://asuka-koukawa.000webhostapp.com/register.php",
+                type: "post",
+                data:{
+                    username:$$('#usernameText').val(),
+                    password:$$('#passwordText').val(),
+                },
+                success:function(e){
+                    myApp.alert("register succ");
+                },
+                error:function(e){
+                    myApp.alert("register failed");
+                }
+            });
+        });
+    } else if (page.name==='login') {
+
+        $$('#login-button').on('click', function() {
+            $$.ajax({
+                url:"http://asuka-koukawa.000webhostapp.com/login.php",
+                type:"post",
+                data:{
+                    username:$$('#usernameText').val(),
+                    password:$$('#passwordText').val(),
+                },
+                success:function(e){
+                    myApp.alert(e);
+                },
+                error:function(){
+                    myApp.alert("login gagal, cek koneksi internet");
+                }
+            });
+        });
     }
+
+
+
+
 })
 
 // Option 2. Using live 'pageInit' event handlers for each page

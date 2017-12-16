@@ -10,7 +10,7 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"> -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
 
     <!-- Required meta tags-->
     <meta charset="utf-8">
@@ -34,8 +34,6 @@
 </head>
 
 <body>
-
-
     <!-- Status bar overlay for full screen mode (PhoneGap) -->
     <div class="statusbar-overlay"></div>
 
@@ -55,7 +53,7 @@
     <div class="views">
         <!-- Your main view, should have "view-main" class -->
         <div class="view view-main">
-
+            
             <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
             <div class="pages navbar-through toolbar-through">
                 <!-- Page, "data-page" contains page name -->
@@ -66,7 +64,7 @@
                             <div class="navbar">
                                 <div class="navbar-inner">
                                     <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                                    <div class="center sliding">Awesome App</div>
+                                    <div class="center sliding">Home</div>
                                     <div class="right">
                                         <!--
                                           Right link contains only icon - additional "icon-only" class
@@ -82,10 +80,13 @@
                             <a href="about.html">About app</a>
                             <br>
                             <a href="cobalagi.html">Cobain nih!</a>
-                            <a href="login.html" class="button">Login</a>
-                            <a href="register.html" class="button">Register</a>
-                            <a href="dullahanpage.html" class="button">Dullahan Page</a>
-                            <p><img data-src="http://asuka-koukawa.000webhostapp.com/asuka-kimono.jpg" width="100%" class="lazy lazy-fadeIn"></p>
+                                <div class="card">
+                                    <div class="card-header">Card header</div>
+                                        <div class="card-content">
+                                            <div class="card-content-inner">Card with header and footer. Card header is used to display card title and footer for some additional information or for custom actions.</div>
+                                        </div>
+                                    <div class="card-footer">Card Footer</div>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -104,7 +105,6 @@
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
-    
 </body>
 
 </html>

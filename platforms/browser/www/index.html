@@ -10,7 +10,7 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"> -->
 
     <!-- Required meta tags-->
     <meta charset="utf-8">
@@ -27,13 +27,15 @@
         http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
      -->
 
-    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
-    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.material.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.material.colors.min.css">
 
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
+
+
     <!-- Status bar overlay for full screen mode (PhoneGap) -->
     <div class="statusbar-overlay"></div>
 
@@ -43,6 +45,9 @@
     <div class="panel panel-left panel-reveal">
         <div class="content-block">
             <p>Left panel content goes here</p>
+            <li><a href="index.html">Index</a></li>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="profile.html">Profile</a></li>
         </div>
     </div>
 
@@ -50,39 +55,37 @@
     <div class="views">
         <!-- Your main view, should have "view-main" class -->
         <div class="view view-main">
-            <!-- Top Navbar-->
-            <div class="navbar">
-                <div class="navbar-inner">
-                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                    <div class="center sliding">Awesome App</div>
-                    <div class="right">
-                        <!--
-                          Right link contains only icon - additional "icon-only" class
-                          Additional "open-panel" class tells app to open panel when we click on this link
-                        -->
-                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
-                    </div>
-                </div>
-            </div>
+
             <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
             <div class="pages navbar-through toolbar-through">
                 <!-- Page, "data-page" contains page name -->
                 <div data-page="index" class="page">
                     <!-- Scrollable page content -->
                     <div class="page-content">
-                        <div class="content-block">
+                        <!-- Top Navbar-->
+                            <div class="navbar">
+                                <div class="navbar-inner">
+                                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+                                    <div class="center sliding">Awesome App</div>
+                                    <div class="right">
+                                        <!--
+                                          Right link contains only icon - additional "icon-only" class
+                                          Additional "open-panel" class tells app to open panel when we click on this link
+                                        -->
+                                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-block">
                             <p>Page content goes here</p>
                             <!-- Link to another page -->
                             <a href="about.html">About app</a>
                             <br>
                             <a href="cobalagi.html">Cobain nih!</a>
-                            <form action="" method="post">
-                                username:<br>
-                                <input type="text" name="username"><br>
-                                password:<br>
-                                <input type="password" name="password"><br>
-                                <button>Login</button><button>Register</button>
-                            </form>
+                            <a href="login.html" class="button">Login</a>
+                            <a href="register.html" class="button">Register</a>
+                            <a href="dullahanpage.html" class="button">Dullahan Page</a>
+                            <p><img data-src="http://asuka-koukawa.000webhostapp.com/asuka-kimono.jpg" width="100%" class="lazy lazy-fadeIn"></p>
                         </div>
                     </div>
                 </div>
@@ -101,6 +104,7 @@
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
+    
 </body>
 
 </html>
